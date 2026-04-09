@@ -9,7 +9,7 @@ export interface Project {
   subtitle: string;
   tags: { label: string; color?: string }[];
   summary: string;
-  description: string;
+  description: string[];
   highlights: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -219,12 +219,11 @@ export default function ProjectCard({
                 Overview
               </h4>
               <div className="text-zinc-300 text-sm leading-relaxed mb-4">
-                {description}
-                {/* {description.map((d, i) => ( */}
-                {/*   <p key={i} className="pb-3"> */}
-                {/*     {d} */}
-                {/*   </p> */}
-                {/* ))} */}
+                {description.map((d, i) => (
+                  <p key={i} className="pb-3">
+                    {d}
+                  </p>
+                ))}
               </div>
 
               {/* Highlights */}
